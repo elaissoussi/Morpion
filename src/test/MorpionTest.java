@@ -15,11 +15,11 @@ public class MorpionTest {
     }
 
     @Test(expected = BoxAlreadySelectedException.class)
-    @Ignore
     public void boxAlreadySelected() {
         Morpion game = new Morpion("3x3", "player1:X", "player2:O");
         game.play("player1", "0x0");
         game.play("player2", "0x1");
+       
         game.play("player1", "0x1");
     }
 

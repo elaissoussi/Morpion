@@ -31,4 +31,8 @@ public class Player {
     public int calculatePlays() {
         return plays.size();
     }
+
+    public boolean hasPlayedIn(Position playPosition) {
+        return plays.contains(playPosition);
+    }
 }

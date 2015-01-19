@@ -18,15 +18,18 @@ public class Morpion {
     public void play(String player, String position) {
         MorpionParser parser = new DefaultParser();
         Player currentPlayer = players.get(player);
-        currentPlayer.play(parser.parsePosition(position));
+        Position playPosition = parser.parsePosition(position);
+        for (Player playerMorpin : players.values()) {
+            if (playerMorpin.hasPlayedIn(playPosition))
+                throw new BoxAlreadySelectedException();
+        }
+        currentPlayer.play(playPosition);
     }
 
     public String report() {
-     
-        int playedGamesNumber=Player.calculateNumberOfPlayedGame(players);
-        
+
         MorpionPrinter printer = new DefaultPrinter();
-        return printer.reportRemaining(players,casesNumber);
+        return printer.reportRemaining(players, casesNumber);
     }
 
     public Matcher<String> display() {
