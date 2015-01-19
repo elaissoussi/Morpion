@@ -31,4 +31,10 @@ public class DefaultPrinter implements MorpionPrinter {
         // TODO Auto-generated method stub
         return playerMorpin.printWinner();
     }
+
+    @Override
+    public String reportEquality() {
+       return "Game Over, equality";
+        
+    }
 }

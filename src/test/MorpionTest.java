@@ -19,11 +19,11 @@ public class MorpionTest {
         Morpion game = new Morpion("3x3", "player1:X", "player2:O");
         game.play("player1", "0x0");
         game.play("player2", "0x1");
-       
+
         game.play("player1", "0x1");
     }
 
-    @Test 
+    @Test
     public void winner() {
         Morpion game = new Morpion("3x3", "player1:X", "player2:O");
         game.play("player1", "0x0");
@@ -35,7 +35,6 @@ public class MorpionTest {
     }
 
     @Test
-    @Ignore
     public void displayEqualityGame() {
         Morpion game = new Morpion("3x3", "player1:X", "player2:O");
         game.play("player1", "0x0");
@@ -55,6 +54,6 @@ public class MorpionTest {
                 .append("X|O|X")
                 .append(Morpion.LINE_SEPARATOR)
                 .toString();
-        assertThat(expectedDisplay.toString(), game.display());
+        assertThat(game.display(), equalTo(expectedDisplay.toString()));
     }
 }

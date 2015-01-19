@@ -9,4 +9,6 @@ public interface MorpionPrinter {
 
     String reportWinner(Player playerMorpin);
 
+    String reportEquality();
+
 }

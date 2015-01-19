@@ -37,11 +37,10 @@ public class Player {
     }
 
     public boolean win(int casesNumber) {
-        System.out.println(plays);
-        int dim = 3;
-        boolean diagWin = testIfDiagonal(dim);
-        boolean lign = testIflign(dim);
-        boolean colonne = testIfColonne(dim);
+        
+        boolean diagWin = testIfDiagonal(3);
+        boolean lign = testIflign(3);
+        boolean colonne = testIfColonne(3);
         return diagWin || lign || colonne;
     }
 

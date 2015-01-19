@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 
 import org.hamcrest.Matcher;
 
@@ -29,14 +31,24 @@ public class Morpion {
     public String report() {
 
         MorpionPrinter printer = new DefaultPrinter();
+        int cases = 0;
         for (Player playerMorpin : players.values()) {
-            if(playerMorpin.win(casesNumber)) return printer.reportWinner(playerMorpin);
+
+            if (playerMorpin.win(casesNumber))
+                return printer.reportWinner(playerMorpin);
+            cases += playerMorpin.calculatePlays();
         }
+        if (casesNumber == cases)
+            return printer.reportEquality();
         return printer.reportRemaining(players, casesNumber);
     }
 
-    public Matcher<String> display() {
-        // TODO Auto-generated method stub
+    public String display() {
+        StringBuilder builder =new StringBuilder();
+        List<String> display=new ArrayList<String>();
+        for (int currentCaseIndex = 0; currentCaseIndex < casesNumber; currentCaseIndex++) {
+            
+        }
         return null;
     }
 
