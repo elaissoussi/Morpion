@@ -23,8 +23,7 @@ public class MorpionTest {
         game.play("player1", "0x1");
     }
 
-    @Test
-    @Ignore
+    @Test 
     public void winner() {
         Morpion game = new Morpion("3x3", "player1:X", "player2:O");
         game.play("player1", "0x0");

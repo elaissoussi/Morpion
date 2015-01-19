@@ -23,8 +23,8 @@ public class DefaultParser implements MorpionParser {
 
     @Override
     public Position parsePosition(String position) {
-        int xPosition = new Integer(position.charAt(0));
-        int yPosition = new Integer(position.charAt(2));
+        int xPosition = new Integer(position.charAt(0)+"");
+        int yPosition = new Integer(position.charAt(2)+"");
         return new Position(xPosition, yPosition);
     }
 

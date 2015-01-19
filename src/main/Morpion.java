@@ -29,6 +29,9 @@ public class Morpion {
     public String report() {
 
         MorpionPrinter printer = new DefaultPrinter();
+        for (Player playerMorpin : players.values()) {
+            if(playerMorpin.win(casesNumber)) return printer.reportWinner(playerMorpin);
+        }
         return printer.reportRemaining(players, casesNumber);
     }
 

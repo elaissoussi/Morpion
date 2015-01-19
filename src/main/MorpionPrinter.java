@@ -7,4 +7,6 @@ public interface MorpionPrinter {
 
     String reportRemaining(LinkedHashMap<String, Player> players, int casesNumber);
 
+    String reportWinner(Player playerMorpin);
+
 }

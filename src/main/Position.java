@@ -17,7 +17,12 @@ public class Position {
         if(obj instanceof Position){
             if(xPosition==((Position)obj).xPosition && yPosition==((Position)obj).yPosition) return true;
         }
-        return super.equals(obj);
+        return false;
+    }
+    
+    @Override
+    public String toString() {
+        return xPosition+":"+yPosition;
     }
 
 }

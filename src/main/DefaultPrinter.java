@@ -25,4 +25,10 @@ public class DefaultPrinter implements MorpionPrinter {
         reports.add(player2.print((int) emptyPlays));
         return String.join(", ", reports);
     }
+
+    @Override
+    public String reportWinner(Player playerMorpin) {
+        // TODO Auto-generated method stub
+        return playerMorpin.printWinner();
+    }
 }

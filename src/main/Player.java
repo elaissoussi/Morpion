@@ -35,4 +35,54 @@ public class Player {
     public boolean hasPlayedIn(Position playPosition) {
         return plays.contains(playPosition);
     }
+
+    public boolean win(int casesNumber) {
+        System.out.println(plays);
+        int dim = 3;
+        boolean diagWin = testIfDiagonal(dim);
+        boolean lign = testIflign(dim);
+        boolean colonne = testIfColonne(dim);
+        return diagWin || lign || colonne;
+    }
+
+    private boolean testIfColonne(int dim) {
+
+        for (int j = 0; j < dim; j++) {
+            List<Position> ligne = new ArrayList<Position>();
+            for (int i = 0; i < dim; i++) {
+                ligne.add(new Position(j, i));
+            }
+            if (plays.containsAll(ligne))
+                return true;
+        }
+
+        return false;
+    }
+
+    private boolean testIflign(int dim) {
+
+        for (int j = 0; j < dim; j++) {
+            List<Position> ligne = new ArrayList<Position>();
+            for (int i = 0; i < dim; i++) {
+                ligne.add(new Position(i, j));
+            }
+            if (plays.containsAll(ligne))
+                return true;
+        }
+
+        return false;
+    }
+
+    private boolean testIfDiagonal(int dim) {
+        List<Position> diagonal = new ArrayList<Position>();
+        for (int i = 0; i < dim; i++) {
+            diagonal.add(new Position(i, i));
+        }
+        
+        return plays.containsAll(diagonal);
+    }
+
+    public String printWinner() {
+        return "Game Over, " + name + " is a winner";
+    }
 }
